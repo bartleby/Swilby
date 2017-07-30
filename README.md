@@ -39,6 +39,8 @@ class SomeServiceAssembly: ServiceAssembly {
         }
     }
 }
+```
+```swift
 // create new SomeService
 let someService = self.container.resolveService(SomeServiceAssembly.self).service()
 
@@ -60,6 +62,8 @@ class SomeServiceAssembly: ServiceAssembly {
     }
 }
 
+```
+```swift
 // create new SomeService singleton
 let someService = self.container.resolveService(SomeServiceAssembly.self).service()
 
