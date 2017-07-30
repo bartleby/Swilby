@@ -5,7 +5,8 @@ Light Dependency Injection Container
 ```swift
 class SomeModuleAssembly: ModuleAssembly {
     func module() -> String {
-        return "SomeModule with service: \(self.container.resolveService(SomeServiceAssembly.self).service())"
+        let service = self.container.resolveService(SomeServiceAssembly.self).service()
+        return "SomeModule with service: \(service)"
     }
 }
 ```
@@ -26,7 +27,7 @@ container.applay(SomeModuleAssembly.self)
 container.applay(SomeServiceAssembly.self)
 
 let result = container.resolveModule(SomeModuleAssembly.self).module()
-print(result)
+print(result) // SomeModule with service: SomeService
 ```
 
 ##### Weak Box
@@ -71,7 +72,7 @@ let someService = self.container.resolveService(SomeServiceAssembly.self).servic
 let someService2 = self.container.resolveService(SomeServiceAssembly.self).service()
 
 someService = nil // SomeService hasn't been released
-someService2 = nil // SomeService hasn't been released becouse it is have behavior like singleton now
+someService2 = nil // SomeService hasn't been released becouse it behaves like Singleton now
 
 // link to SomeService singleton
 let someService = self.container.resolveService(SomeServiceAssembly.self).service()
