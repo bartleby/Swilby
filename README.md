@@ -67,7 +67,7 @@ let someService = self.container.resolveService(SomeServiceAssembly.self).servic
 let someService2 = self.container.resolveService(SomeServiceAssembly.self).service()
 
 someService = nil // SomeService hasn't been released
-someService2 = nil // SomeService hasn't been released becouse it is singleton now
+someService2 = nil // SomeService hasn't been released becouse it is have behavior like singleton now
 
 // link to SomeService singleton
 let someService = self.container.resolveService(SomeServiceAssembly.self).service()
