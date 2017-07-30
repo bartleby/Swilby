@@ -28,3 +28,29 @@ container.applay(SomeServiceAssembly.self)
 let result = container.resolveModule(SomeModuleAssembly.self).module()
 print(result)
 ```
+
+##### Weak Box
+
+```swift
+class SomeServiceAssembly: ServiceAssembly {
+    func service() -> String {
+        return weakBox {
+            return "SomeService"
+        }
+    }
+}
+
+```
+
+##### Strong Box (like singleton)
+
+```swift
+class SomeServiceAssembly: ServiceAssembly {
+    func service() -> String {
+        return strongBox {
+            return "SomeService"
+        }
+    }
+}
+
+```
