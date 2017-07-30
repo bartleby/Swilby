@@ -1,7 +1,7 @@
 # LigthDI
 Light Dependency Injection Container
 
-##### Example:
+## Example:
 ```swift
 class SomeModuleAssembly: ModuleAssembly {
     func module() -> String {
