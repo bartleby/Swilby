@@ -12,6 +12,15 @@
 		F448E8BA1F2E209B009CD577 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F448E8B81F2E209B009CD577 /* Main.storyboard */; };
 		F448E8BC1F2E209B009CD577 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F448E8BB1F2E209B009CD577 /* Assets.xcassets */; };
 		F448E8BF1F2E209B009CD577 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F448E8BD1F2E209B009CD577 /* LaunchScreen.storyboard */; };
+		F448E8D11F2E20EB009CD577 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448E8CA1F2E20BC009CD577 /* Assembly.swift */; };
+		F448E8D21F2E20EB009CD577 /* AssemblyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448E8CB1F2E20BC009CD577 /* AssemblyFactory.swift */; };
+		F448E8D31F2E20EB009CD577 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448E8CC1F2E20BC009CD577 /* DependencyContainer.swift */; };
+		F448E8D41F2E20EB009CD577 /* ObjectKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448E8CD1F2E20BC009CD577 /* ObjectKey.swift */; };
+		F448E8D51F2E20EB009CD577 /* StrongBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448E8CE1F2E20BC009CD577 /* StrongBox.swift */; };
+		F448E8D61F2E20EB009CD577 /* WeakBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448E8CF1F2E20BC009CD577 /* WeakBox.swift */; };
+		F448E8D71F2E20EB009CD577 /* WeakContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448E8D01F2E20BC009CD577 /* WeakContainer.swift */; };
+		F448E8D81F2E20EE009CD577 /* SomeModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448E8C71F2E20B0009CD577 /* SomeModuleAssembly.swift */; };
+		F448E8D91F2E20EE009CD577 /* SomeServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448E8C81F2E20B0009CD577 /* SomeServiceAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +31,15 @@
 		F448E8BB1F2E209B009CD577 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F448E8BE1F2E209B009CD577 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F448E8C01F2E209B009CD577 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F448E8C71F2E20B0009CD577 /* SomeModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeModuleAssembly.swift; sourceTree = "<group>"; };
+		F448E8C81F2E20B0009CD577 /* SomeServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeServiceAssembly.swift; sourceTree = "<group>"; };
+		F448E8CA1F2E20BC009CD577 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
+		F448E8CB1F2E20BC009CD577 /* AssemblyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyFactory.swift; sourceTree = "<group>"; };
+		F448E8CC1F2E20BC009CD577 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		F448E8CD1F2E20BC009CD577 /* ObjectKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectKey.swift; sourceTree = "<group>"; };
+		F448E8CE1F2E20BC009CD577 /* StrongBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrongBox.swift; sourceTree = "<group>"; };
+		F448E8CF1F2E20BC009CD577 /* WeakBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakBox.swift; sourceTree = "<group>"; };
+		F448E8D01F2E20BC009CD577 /* WeakContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +72,8 @@
 		F448E8B31F2E209B009CD577 /* LigthDI */ = {
 			isa = PBXGroup;
 			children = (
+				F448E8C61F2E20B0009CD577 /* Assembly */,
+				F448E8C91F2E20BC009CD577 /* Container */,
 				F448E8B41F2E209B009CD577 /* AppDelegate.swift */,
 				F448E8B61F2E209B009CD577 /* ViewController.swift */,
 				F448E8B81F2E209B009CD577 /* Main.storyboard */,
@@ -62,6 +82,29 @@
 				F448E8C01F2E209B009CD577 /* Info.plist */,
 			);
 			path = LigthDI;
+			sourceTree = "<group>";
+		};
+		F448E8C61F2E20B0009CD577 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				F448E8C71F2E20B0009CD577 /* SomeModuleAssembly.swift */,
+				F448E8C81F2E20B0009CD577 /* SomeServiceAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		F448E8C91F2E20BC009CD577 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				F448E8CA1F2E20BC009CD577 /* Assembly.swift */,
+				F448E8CB1F2E20BC009CD577 /* AssemblyFactory.swift */,
+				F448E8CC1F2E20BC009CD577 /* DependencyContainer.swift */,
+				F448E8CD1F2E20BC009CD577 /* ObjectKey.swift */,
+				F448E8CE1F2E20BC009CD577 /* StrongBox.swift */,
+				F448E8CF1F2E20BC009CD577 /* WeakBox.swift */,
+				F448E8D01F2E20BC009CD577 /* WeakContainer.swift */,
+			);
+			path = Container;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +178,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F448E8D51F2E20EB009CD577 /* StrongBox.swift in Sources */,
+				F448E8D61F2E20EB009CD577 /* WeakBox.swift in Sources */,
+				F448E8D21F2E20EB009CD577 /* AssemblyFactory.swift in Sources */,
+				F448E8D31F2E20EB009CD577 /* DependencyContainer.swift in Sources */,
 				F448E8B71F2E209B009CD577 /* ViewController.swift in Sources */,
+				F448E8D71F2E20EB009CD577 /* WeakContainer.swift in Sources */,
+				F448E8D11F2E20EB009CD577 /* Assembly.swift in Sources */,
+				F448E8D41F2E20EB009CD577 /* ObjectKey.swift in Sources */,
+				F448E8D91F2E20EE009CD577 /* SomeServiceAssembly.swift in Sources */,
 				F448E8B51F2E209B009CD577 /* AppDelegate.swift in Sources */,
+				F448E8D81F2E20EE009CD577 /* SomeModuleAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
