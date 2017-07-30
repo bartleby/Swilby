@@ -45,8 +45,8 @@ let someService = self.container.resolveService(SomeServiceAssembly.self).servic
 // make link to someService, like someService2 = someService
 let someService2 = self.container.resolveService(SomeServiceAssembly.self).service()
 
-someService = nil // SomeService not release
-someService2 = nil // SomeService release
+someService = nil // SomeService hasn't been released
+someService2 = nil // SomeService has been released
 ```
 
 ##### Strong Box (like singleton)
@@ -66,8 +66,8 @@ let someService = self.container.resolveService(SomeServiceAssembly.self).servic
 // make link to someService, like someService2 = someService
 let someService2 = self.container.resolveService(SomeServiceAssembly.self).service()
 
-someService = nil // SomeService not release
-someService2 = nil // SomeService not release becouse it is singleton
+someService = nil // SomeService hasn't been released
+someService2 = nil // SomeService hasn't been released becouse it is singleton now
 
 // link to SomeService singleton
 let someService = self.container.resolveService(SomeServiceAssembly.self).service()
