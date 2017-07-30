@@ -5,7 +5,8 @@ Light Dependency Injection Container
 ```swift
 class SomeModuleAssembly: ModuleAssembly {
     func module() -> String {
-        return "SomeModule with service: \(self.container.resolveService(SomeServiceAssembly.self).service())"
+        let service = self.container.resolveService(SomeServiceAssembly.self).service()
+        return "SomeModule with service: \(service)"
     }
 }
 ```
