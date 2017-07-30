@@ -39,7 +39,14 @@ class SomeServiceAssembly: ServiceAssembly {
         }
     }
 }
+// create new SomeService
+let someService = self.container.resolveService(SomeServiceAssembly.self).service()
 
+// make link to someService, like someService2 = someService
+let someService2 = self.container.resolveService(SomeServiceAssembly.self).service()
+
+someService = nil // SomeService not release
+someService2 = nil // SomeService release
 ```
 
 ##### Strong Box (like singleton)
@@ -52,5 +59,17 @@ class SomeServiceAssembly: ServiceAssembly {
         }
     }
 }
+
+// create new SomeService singleton
+let someService = self.container.resolveService(SomeServiceAssembly.self).service()
+
+// make link to someService, like someService2 = someService
+let someService2 = self.container.resolveService(SomeServiceAssembly.self).service()
+
+someService = nil // SomeService not release
+someService2 = nil // SomeService not release becouse it is singleton
+
+// link to SomeService singleton
+let someService = self.container.resolveService(SomeServiceAssembly.self).service()
 
 ```
