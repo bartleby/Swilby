@@ -26,7 +26,7 @@ extension AssemblyFactory: AssemblyFactoryProtocol {
     
     func resolve<T: Assembly>(_ type: T.Type) -> T.Type {
         let key = ObjectKey(type).key
-        guard let assembly = assemblyCollection[key] else { fatalError("Requested you are Assemblay '\(String(describing: type))' has not been registered, use apply( _:) method") }
+        guard let assembly = assemblyCollection[key] else { fatalError("Assemblay '\(String(describing: type))' has't been registered, use 'apply( _:)' method") }
         return assembly as! T.Type
     }
 }
