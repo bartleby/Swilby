@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let factory = AssemblyFactory()
-        let container = DependencyContainer(assemblyFactory: factory)
+        let factory: AssemblyFactoryProtocol = AssemblyFactory()
+        let container: LightContainer = DependencyContainer(assemblyFactory: factory)
         
         container.applay(SomeModuleAssembly.self)
         container.applay(SomeServiceAssembly.self)

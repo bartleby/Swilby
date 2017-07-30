@@ -8,19 +8,44 @@
 
 import Foundation
 
+typealias LightContainer = DependencyContainerProtocol & ModuleResolver & ServiceResolver
+
 protocol DependencyContainerProtocol {
+    func applay<T: Assembly>(_ type: T.Type, name: String?)
     func applay<T: Assembly>(_ type: T.Type)
 }
 
 protocol ModuleResolver: WeakBox, StrongBox {
+    func resolveModule<T: ModuleAssembly>(_ type: T.Type, name: String?) -> T
     func resolveModule<T: ModuleAssembly>(_ type: T.Type) -> T
 }
 
 protocol ServiceResolver: WeakBox, StrongBox {
+    func resolveService<T: ServiceAssembly>(_ type: T.Type, name: String?) -> T
     func resolveService<T: ServiceAssembly>(_ type: T.Type) -> T
 }
 
-class DependencyContainer: DependencyContainerProtocol, ModuleResolver, ServiceResolver {
+extension ModuleResolver {
+    func resolveModule<T>(_ type: T.Type) -> T where T : ModuleAssembly {
+        return self.resolveModule(type, name: nil)
+    }
+}
+
+extension ServiceResolver {
+    func resolveService<T>(_ type: T.Type) -> T where T : ServiceAssembly {
+        return self.resolveService(type, name: nil)
+    }
+}
+
+extension DependencyContainerProtocol {
+    func applay<T: Assembly>(_ type: T.Type) {
+        self.applay(type, name: nil)
+    }
+}
+
+
+// DI Container
+class DependencyContainer {
     internal var weakBoxHolder = [String : WeakContainer<AnyObject>]()
     internal var strongBoxHolder = [String : AnyObject]()
 
@@ -29,18 +54,24 @@ class DependencyContainer: DependencyContainerProtocol, ModuleResolver, ServiceR
     init(assemblyFactory: AssemblyFactoryProtocol) {
         self.assemblyFactory = assemblyFactory
     }
-    
-    func applay<T: Assembly>(_ type: T.Type) {
-        self.assemblyFactory.apply(type)
+}
+
+extension DependencyContainer: ServiceResolver {
+    func resolveService<T>(_ type: T.Type, name: String?) -> T where T : ServiceAssembly {
+        let service = self.assemblyFactory.resolve(type, name: name)
+        return service.init(container: self)
     }
-    
-    func resolveModule<T: ModuleAssembly>(_ type: T.Type) -> T {
-        let module = self.assemblyFactory.resolve(type)
+}
+
+extension DependencyContainer: ModuleResolver {
+    func resolveModule<T>(_ type: T.Type, name: String?) -> T where T : ModuleAssembly {
+        let module = self.assemblyFactory.resolve(type, name: name)
         return module.init(container: self)
     }
-    
-    func resolveService<T: ServiceAssembly>(_ type: T.Type) -> T {
-        let service = self.assemblyFactory.resolve(type)
-        return service.init(container: self)
+}
+
+extension DependencyContainer: DependencyContainerProtocol {
+    func applay<T>(_ type: T.Type, name: String?) where T : Assembly {
+        self.assemblyFactory.apply(type, name: name)
     }
 }
