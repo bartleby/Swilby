@@ -23,8 +23,8 @@ class SomeServiceAssembly: ServiceAssembly {
 let factory = AssemblyFactory()
 let container = DependencyContainer(assemblyFactory: factory)
 
-container.applay(SomeModuleAssembly.self)
-container.applay(SomeServiceAssembly.self)
+container.apply(SomeModuleAssembly.self)
+container.apply(SomeServiceAssembly.self)
 
 let result = container.resolveModule(SomeModuleAssembly.self).module()
 print(result) // SomeModule with service: SomeService
