@@ -13,14 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         let factory: AssemblyFactoryProtocol = AssemblyFactory()
         let container: LightContainer = DependencyContainer(assemblyFactory: factory)
         
-        container.applay(SomeModuleAssembly.self)
-        container.applay(SomeServiceAssembly.self)
+        container.apply(SomeModuleAssembly.self)
+        container.apply(SomeServiceAssembly.self)
         
         let result = container.resolveModule(SomeModuleAssembly.self).module()
         print(result)
@@ -50,7 +49,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
-

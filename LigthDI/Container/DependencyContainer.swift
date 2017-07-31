@@ -11,8 +11,8 @@ import Foundation
 typealias LightContainer = DependencyContainerProtocol & ModuleResolver & ServiceResolver
 
 protocol DependencyContainerProtocol {
-    func applay<T: Assembly>(_ type: T.Type, name: String?)
-    func applay<T: Assembly>(_ type: T.Type)
+    func apply<T: Assembly>(_ type: T.Type, name: String?)
+    func apply<T: Assembly>(_ type: T.Type)
 }
 
 protocol ModuleResolver: WeakBox, StrongBox {
@@ -38,8 +38,8 @@ extension ServiceResolver {
 }
 
 extension DependencyContainerProtocol {
-    func applay<T: Assembly>(_ type: T.Type) {
-        self.applay(type, name: nil)
+    func apply<T: Assembly>(_ type: T.Type) {
+        self.apply(type, name: nil)
     }
 }
 
@@ -71,7 +71,7 @@ extension DependencyContainer: ModuleResolver {
 }
 
 extension DependencyContainer: DependencyContainerProtocol {
-    func applay<T>(_ type: T.Type, name: String?) where T : Assembly {
+    func apply<T>(_ type: T.Type, name: String?) where T : Assembly {
         self.assemblyFactory.apply(type, name: name)
     }
 }
