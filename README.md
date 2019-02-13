@@ -1,5 +1,5 @@
 # Swilby
-Dependency Injection Container
+A light-weight Dependency Injection Container on based Assembly
 
 ## Example:
 ```swift
