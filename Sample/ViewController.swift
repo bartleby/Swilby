@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  LigthDI
+//  Sample
 //
 //  Created by Artemev Aleksey on 30.07.17.
 //  Copyright © 2017 Artemev Aleksey. All rights reserved.
