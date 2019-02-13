@@ -3,50 +3,50 @@ Light Dependency Injection Container
 
 ## Example:
 ```swift
-class SomeModuleAssembly: ModuleAssembly {
-    func module() -> String {
-        let service = self.container.resolveService(SomeServiceAssembly.self).service()
+class SomeModuleAssembly: Assembly {
+    func build() -> String {
+        let service = container.resolve(SomeServiceAssembly.self).build()
         return "SomeModule with service: \(service)"
     }
 }
 ```
 ```swift
-class SomeServiceAssembly: ServiceAssembly {
-    func service() -> String {
-        return "SomeService"
+class SomeServiceAssembly: Assembly {
+    func build() -> String {
+        return "Some Service"
     }
 }
 
 ```
 
 ```swift
-let factory = AssemblyFactory()
-let container = DependencyContainer(assemblyFactory: factory)
-
+let factory: AssemblyFactoryProtocol = AssemblyFactory()
+let container: LightContainer = DependencyContainer(assemblyFactory: factory)
+        
 container.apply(SomeModuleAssembly.self)
 container.apply(SomeServiceAssembly.self)
-
-let result = container.resolveModule(SomeModuleAssembly.self).module()
-print(result) // SomeModule with service: SomeService
+        
+let result = container.resolve(SomeModuleAssembly.self).build()
+print(result)
 ```
 
 ##### Weak Box
 
 ```swift
-class SomeServiceAssembly: ServiceAssembly {
-    func service() -> String {
+class SomeServiceAssembly: Assembly {
+    func build() -> String {
         return weakBox {
-            return "SomeService"
+            return "Some Service"
         }
     }
 }
 ```
 ```swift
 // create new SomeService
-let someService = self.container.resolveService(SomeServiceAssembly.self).service()
+let someService = container.resolve(SomeServiceAssembly.self).build()
 
 // make link to someService, like someService2 = someService
-let someService2 = self.container.resolveService(SomeServiceAssembly.self).service()
+let someService2 = container.resolve(SomeServiceAssembly.self).build()
 
 someService = nil // SomeService hasn't been released
 someService2 = nil // SomeService has been released
@@ -55,26 +55,25 @@ someService2 = nil // SomeService has been released
 ##### Strong Box (like singleton)
 
 ```swift
-class SomeServiceAssembly: ServiceAssembly {
-    func service() -> String {
+class SomeServiceAssembly: Assembly {
+    func build() -> String {
         return strongBox {
-            return "SomeService"
+            return "Some Service"
         }
     }
 }
-
 ```
 ```swift
 // create new SomeService singleton
-let someService = self.container.resolveService(SomeServiceAssembly.self).service()
+let someService = container.resolve(SomeServiceAssembly.self).build()
 
 // make link to someService, like someService2 = someService
-let someService2 = self.container.resolveService(SomeServiceAssembly.self).service()
+let someService2 = container.resolve(SomeServiceAssembly.self).build()
 
 someService = nil // SomeService hasn't been released
 someService2 = nil // SomeService hasn't been released becouse it behaves like Singleton now
 
 // link to SomeService singleton
-let someService = self.container.resolveService(SomeServiceAssembly.self).service()
+let someService = container.resolve(SomeServiceAssembly.self).build()
 
 ```
