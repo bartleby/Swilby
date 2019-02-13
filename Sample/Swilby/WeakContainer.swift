@@ -1,9 +1,9 @@
 //
 //  WeakContainer.swift
-//  iBlades
+//  Swilby
 //
-//  Created by Bartleby on 15.08.16.
-//  Copyright © 2016 i-Blades. All rights reserved.
+//  Created by Aleksei Artemev on 13/02/2019
+//  Copyright © 2019 iDevs.io All rights reserved.
 //
 
 import Foundation

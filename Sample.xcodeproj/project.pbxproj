@@ -24,7 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F448E8B11F2E209B009CD577 /* LigthDI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LigthDI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F448E8B11F2E209B009CD577 /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F448E8B41F2E209B009CD577 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F448E8B61F2E209B009CD577 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F448E8B91F2E209B009CD577 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		F448E8A81F2E209B009CD577 = {
 			isa = PBXGroup;
 			children = (
-				F448E8B31F2E209B009CD577 /* LigthDI */,
+				F448E8B31F2E209B009CD577 /* Sample */,
 				F448E8B21F2E209B009CD577 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,16 +64,16 @@
 		F448E8B21F2E209B009CD577 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F448E8B11F2E209B009CD577 /* LigthDI.app */,
+				F448E8B11F2E209B009CD577 /* Sample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F448E8B31F2E209B009CD577 /* LigthDI */ = {
+		F448E8B31F2E209B009CD577 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
 				F448E8C61F2E20B0009CD577 /* Assembly */,
-				F448E8C91F2E20BC009CD577 /* Container */,
+				F448E8C91F2E20BC009CD577 /* Swilby */,
 				F448E8B41F2E209B009CD577 /* AppDelegate.swift */,
 				F448E8B61F2E209B009CD577 /* ViewController.swift */,
 				F448E8B81F2E209B009CD577 /* Main.storyboard */,
@@ -81,7 +81,7 @@
 				F448E8BD1F2E209B009CD577 /* LaunchScreen.storyboard */,
 				F448E8C01F2E209B009CD577 /* Info.plist */,
 			);
-			path = LigthDI;
+			path = Sample;
 			sourceTree = "<group>";
 		};
 		F448E8C61F2E20B0009CD577 /* Assembly */ = {
@@ -93,7 +93,7 @@
 			path = Assembly;
 			sourceTree = "<group>";
 		};
-		F448E8C91F2E20BC009CD577 /* Container */ = {
+		F448E8C91F2E20BC009CD577 /* Swilby */ = {
 			isa = PBXGroup;
 			children = (
 				F448E8CA1F2E20BC009CD577 /* Assembly.swift */,
@@ -104,15 +104,15 @@
 				F448E8CF1F2E20BC009CD577 /* WeakBox.swift */,
 				F448E8D01F2E20BC009CD577 /* WeakContainer.swift */,
 			);
-			path = Container;
+			path = Swilby;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F448E8B01F2E209B009CD577 /* LigthDI */ = {
+		F448E8B01F2E209B009CD577 /* Sample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F448E8C31F2E209B009CD577 /* Build configuration list for PBXNativeTarget "LigthDI" */;
+			buildConfigurationList = F448E8C31F2E209B009CD577 /* Build configuration list for PBXNativeTarget "Sample" */;
 			buildPhases = (
 				F448E8AD1F2E209B009CD577 /* Sources */,
 				F448E8AE1F2E209B009CD577 /* Frameworks */,
@@ -122,9 +122,9 @@
 			);
 			dependencies = (
 			);
-			name = LigthDI;
+			name = Sample;
 			productName = LigthDI;
-			productReference = F448E8B11F2E209B009CD577 /* LigthDI.app */;
+			productReference = F448E8B11F2E209B009CD577 /* Sample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -142,7 +142,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F448E8AC1F2E209B009CD577 /* Build configuration list for PBXProject "LigthDI" */;
+			buildConfigurationList = F448E8AC1F2E209B009CD577 /* Build configuration list for PBXProject "Sample" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -155,7 +155,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F448E8B01F2E209B009CD577 /* LigthDI */,
+				F448E8B01F2E209B009CD577 /* Sample */,
 			);
 		};
 /* End PBXProject section */
@@ -326,9 +326,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZC9UES3W9Y;
-				INFOPLIST_FILE = LigthDI/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = bartleby.LigthDI;
+				PRODUCT_BUNDLE_IDENTIFIER = io.idevs.Sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -340,9 +340,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZC9UES3W9Y;
-				INFOPLIST_FILE = LigthDI/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = bartleby.LigthDI;
+				PRODUCT_BUNDLE_IDENTIFIER = io.idevs.Sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -352,7 +352,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F448E8AC1F2E209B009CD577 /* Build configuration list for PBXProject "LigthDI" */ = {
+		F448E8AC1F2E209B009CD577 /* Build configuration list for PBXProject "Sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F448E8C11F2E209B009CD577 /* Debug */,
@@ -361,7 +361,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F448E8C31F2E209B009CD577 /* Build configuration list for PBXNativeTarget "LigthDI" */ = {
+		F448E8C31F2E209B009CD577 /* Build configuration list for PBXNativeTarget "Sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F448E8C41F2E209B009CD577 /* Debug */,

@@ -8,8 +8,8 @@
 
 import Foundation
 
-class SomeServiceAssembly: ServiceAssembly {
-    func service() -> String {
-        return "SomeService"
+class SomeServiceAssembly: Assembly {
+    func build() -> String {
+        return "Some Service"
     }
 }

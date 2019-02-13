@@ -1,9 +1,9 @@
 //
-//  AssemblyWeakBox.swift
-//  iBlades
+//  WeakBox.swift
+//  Swilby
 //
-//  Created by Bartleby on 17.02.17.
-//  Copyright © 2017 i-Blades. All rights reserved.
+//  Created by Aleksei Artemev on 13/02/2019
+//  Copyright © 2019 iDevs.io All rights reserved.
 //
 
 import Foundation

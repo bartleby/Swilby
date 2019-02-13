@@ -8,9 +8,9 @@
 
 import Foundation
 
-class SomeModuleAssembly: ModuleAssembly {
-    func module() -> String {
-        let service = self.container.resolveService(SomeServiceAssembly.self).service()
+class SomeModuleAssembly: Assembly {
+    func build() -> String {
+        let service = container.resolve(SomeServiceAssembly.self).build()
         return "SomeModule with service: \(service)"
     }
 }
