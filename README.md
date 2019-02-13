@@ -1,5 +1,5 @@
-# LigthDI
-Light Dependency Injection Container
+# Swilby
+Dependency Injection Container
 
 ## Example:
 ```swift
