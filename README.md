@@ -48,8 +48,8 @@ let someService = container.resolve(SomeServiceAssembly.self).build()
 // make link to someService, like someService2 = someService
 let someService2 = container.resolve(SomeServiceAssembly.self).build()
 
-someService = nil // SomeService hasn't been released
-someService2 = nil // SomeService has been released
+someService = nil // SomeService will not be released
+someService2 = nil // SomeService will now be released
 ```
 
 ##### Strong Box (like singleton)
@@ -64,16 +64,16 @@ class SomeServiceAssembly: Assembly {
 }
 ```
 ```swift
-// create new SomeService singleton
+// create new SomeService
 let someService = container.resolve(SomeServiceAssembly.self).build()
 
 // make link to someService, like someService2 = someService
 let someService2 = container.resolve(SomeServiceAssembly.self).build()
 
-someService = nil // SomeService hasn't been released
-someService2 = nil // SomeService hasn't been released becouse it behaves like Singleton now
+someService = nil // SomeService will not be released
+someService2 = nil // SomeService will still not be released because it is singelton
 
-// link to SomeService singleton
+// you can get a link to a instanse of singelton
 let someService = container.resolve(SomeServiceAssembly.self).build()
 
 ```
