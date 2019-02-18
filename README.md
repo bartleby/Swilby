@@ -27,7 +27,7 @@ container.apply(SomeModuleAssembly.self)
 container.apply(SomeServiceAssembly.self)
         
 let result = container.resolve(SomeModuleAssembly.self).build()
-print(result)
+print(result) // SomeModule with service: Some Service
 ```
 
 ##### Weak Box
