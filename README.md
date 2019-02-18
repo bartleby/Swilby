@@ -30,7 +30,7 @@ let result = container.resolve(SomeModuleAssembly.self).build()
 print(result) // SomeModule with service: Some Service
 ```
 
-##### Weak Box
+### Weak Box
 
 ```swift
 class SomeServiceAssembly: Assembly {
@@ -52,7 +52,7 @@ someService = nil // SomeService will not be released
 someService2 = nil // SomeService will now be released
 ```
 
-##### Strong Box (like singleton)
+### Strong Box (like singleton)
 
 ```swift
 class SomeServiceAssembly: Assembly {
